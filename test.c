@@ -6,12 +6,12 @@
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 08:17:42 by kai-iou           #+#    #+#             */
-/*   Updated: 2025/07/19 11:23:40 by kai-iou          ###   ########.fr       */
+/*   Updated: 2025/07/19 13:42:13 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h>
 
 typedef struct s_cmd
 {
@@ -78,4 +78,24 @@ void	print_cmd_list(t_cmd *list)
 		printf("\n");
 		list = list->next;
 	}
+}
+
+int	main()
+{
+	t_cmd *cmd_list = NULL;
+
+	char *args1[] = {"ls", "-l", NULL};
+	t_cmd *cmd1 = cmd_new(args1, NULL, NULL, 0);
+	cmd_add_back(&cmd_list, cmd1);
+
+	char *args2[] = {"echo", "coucou", NULL};
+	t_cmd *cmd2 = cmd_new(args2, NULL, "out.txt", 0);
+	cmd_add_back(&cmd_list, cmd2);
+
+	char *args3[] = {"cat", NULL};
+	t_cmd *cmd3 = cmd_new(args3, "in.txt", "out.txt", 1);
+	cmd_add_back(&cmd_list, cmd3);
+	
+	print_cmd_list(cmd_list);
+	return (0);
 }
