@@ -16,10 +16,16 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+typedef struct s_env
+{
+	char			*key;
+	char			*value;
+	struct s_env	*next;
+}					t_env;
+
 typedef struct s_parsing
 {
-	char				**args;
-	char				**env;
+	t_env				*env;
 	char				**rd_in;
 	char				**rd_out;
 	int					*out_flags;
@@ -27,8 +33,13 @@ typedef struct s_parsing
 	char				**cmd;
 	struct s_parsing	*next;
 
-}				t_parsing;
+}					t_parsing;
 
-//structure modifiable que je vais surement utiliser en parsing.
+typedef struct s_exec
+{
+	
+	struct t_exec	*next;
+}					t_exec;
+
 
 #endif
