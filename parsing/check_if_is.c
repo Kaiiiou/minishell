@@ -22,4 +22,5 @@ int quote_is_close(char c)
 		return TRUE;
 }
 // here i just check if the quote was close or not.
-// However, if they are close they are empty.
+// However, if they are close they are empty. I don t check if i have something inside.
+

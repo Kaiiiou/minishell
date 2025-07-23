@@ -16,16 +16,22 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+typedef struct s_env
+{
+	char		**envr;
+}				t_env;
+
 typedef struct s_parsing
 {
 	char				**args;
-	char				**env;
 	char				**rd_in;
 	char				**rd_out;
 	int					*out_flags;
 	int					*rd_order;
 	char				**cmd;
+	struct s_env		**envr;
 	struct s_parsing	*next;
+
 
 }				t_parsing;
 
