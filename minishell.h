@@ -37,7 +37,9 @@ typedef struct s_parsing
 
 typedef struct s_exec
 {
-	
+	t_parsing		*parsing;
+//t_token		*tokens;
+
 	struct t_exec	*next;
 }					t_exec;
 
