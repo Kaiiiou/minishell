@@ -13,7 +13,7 @@ int is_only_one_pipe(char c)
 	else if (c == "||")
 		return FALSE;
 }
-
+//gerer en count le nb de pipe , if + que 1 quit
 int quote_is_close(char c)
 {
 	if(c == "QUOTE_OPEN")
@@ -21,6 +21,16 @@ int quote_is_close(char c)
 	else if(c == "QUOTE_CLOSE")
 		return TRUE;
 }
-// here i just check if the quote was close or not.
+// gerer ''
+int is_parentheses_is_close(char c)
+{
+	if(c == ')' || c == ')')
+		return FALSE;
+	if(c == "()")
+		return TRUE;
+}
+//gerer en count le nb de () , if + que 2 et pas fermer quit
+
+// here i just check if the quote and parenthese was close or not.
 // However, if they are close they are empty. I don t check if i have something inside.
 
