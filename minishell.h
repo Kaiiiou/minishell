@@ -44,7 +44,7 @@ typedef struct s_exec
 	int				infile;
 	int				outfile;
 	int				*pids;
-	int				*pipes;
+	int				**pipes;
 }					t_exec;
 
 
