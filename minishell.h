@@ -39,8 +39,12 @@ typedef struct s_exec
 {
 	t_parsing		*parsing;
 //t_token		*tokens;
-
-	struct t_exec	*next;
+	int				cmd_count;
+	int				exit;
+	int				infile;
+	int				outfile;
+	int				*pids;
+	int				*pipes;
 }					t_exec;
 
 
