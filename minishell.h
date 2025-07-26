@@ -26,6 +26,7 @@ typedef struct s_env
 typedef struct s_parsing
 {
 	t_env				*env;
+	// char				**heredoc;
 	char				**rd_in;
 	char				**rd_out;
 	int					*out_flags;
